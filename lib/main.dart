@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget{
 
 class HomePage extends StatelessWidget{
 
-  void showSnack(BuildContext context,String msg){
-
+  void showSnack(BuildContext context, String msg){
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 
 
@@ -28,7 +28,36 @@ class HomePage extends StatelessWidget{
       body: Center(
         child: Column(
           children: [
-            ElevatedButton(onPressed: (){}, child: Text("Click Me"))
+
+            ElevatedButton(
+                onPressed: (){
+                  showSnack(context, "This is Eleveted Button");
+                  },
+                child: Text("Click Me")),
+
+            SizedBox(height: 20,),
+
+            OutlinedButton(
+                onPressed: (){
+                  showSnack(context, "This is Outlined Button");
+                  },
+                child: Text("Click Me")),
+
+            SizedBox(height: 20,),
+
+            TextButton(
+                onPressed: (){
+                  showSnack(context, "This is Text Button");
+                  },
+                child: Text("Click Me")),
+
+            SizedBox(height: 20,),
+            
+            IconButton(
+                onPressed: (){
+                  showSnack(context, "This is Icon Button");
+                  },
+                icon: Icon(Icons.ac_unit_outlined))
           ],
         ),
       ),
