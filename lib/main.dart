@@ -98,7 +98,21 @@ class HomePage extends StatelessWidget{
 
             CheckboxListTile(
               title: Text("This is Checkbox"),
-              value: false,
+              value: true,
+              onChanged: (value){
+                if(value == true){
+                  showSnack(context, "Checked");
+                }else{
+                  showSnack(context, "Unchecked");
+                }
+              },
+            ),
+
+            SizedBox(height: 20,),
+
+            SwitchListTile(
+              title: Text("This is Checkbox"),
+              value: true,
               onChanged: (value){
                 if(value == true){
                   showSnack(context, "Checked");
