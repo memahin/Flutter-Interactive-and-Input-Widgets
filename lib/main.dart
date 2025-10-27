@@ -121,6 +121,18 @@ class HomePage extends StatelessWidget{
                 }
               },
             ),
+
+            SizedBox(height: 20,),
+
+            Slider(
+              value: 50,
+              min: 0,
+              max: 100,
+              divisions: 10,
+              onChanged: (value){
+                showSnack(context, value.toString());
+              },
+            ),
           ],
         ),
       ),
