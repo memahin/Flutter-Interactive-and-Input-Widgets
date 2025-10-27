@@ -80,6 +80,8 @@ class HomePage extends StatelessWidget{
               }
             ),
 
+            SizedBox(height: 20,),
+
             DropdownButton(
               hint: Text("Choose City Name"),
                 items: [
@@ -90,7 +92,21 @@ class HomePage extends StatelessWidget{
               onChanged: (value){
                   showSnack(context, value.toString());
               }
-            )
+            ),
+
+            SizedBox(height: 20,),
+
+            CheckboxListTile(
+              title: Text("This is Checkbox"),
+              value: false,
+              onChanged: (value){
+                if(value == true){
+                  showSnack(context, "Checked");
+                }else{
+                  showSnack(context, "Unchecked");
+                }
+              },
+            ),
           ],
         ),
       ),
