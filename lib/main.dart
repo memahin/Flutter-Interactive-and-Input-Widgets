@@ -68,8 +68,28 @@ class HomePage extends StatelessWidget{
               onLongPress: (){
                 showSnack(context, "Long Press");
               },
-
               child: IconButton(onPressed: (){}, icon: Icon(Icons.accessibility)),
+            ),
+
+            SizedBox(height: 20,),
+
+            TextFormField(
+              decoration: InputDecoration(labelText: "Enter Your Name"),
+              onFieldSubmitted: (value){
+                showSnack(context, value);
+              }
+            ),
+
+            DropdownButton(
+              hint: Text("Choose City Name"),
+                items: [
+                  DropdownMenuItem(value: "Dhaka", child: Text("Dhaka")),
+                  DropdownMenuItem(value: "Rajshahi", child: Text("Rajshahi")),
+                  DropdownMenuItem(value: "Khulna", child: Text("Khulna")),
+                ],
+              onChanged: (value){
+                  showSnack(context, value.toString());
+              }
             )
           ],
         ),
