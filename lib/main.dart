@@ -24,7 +24,18 @@ class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Flutter"),),
+      appBar: AppBar(
+        title: Text("Flutter"),
+        elevation: 16,
+        centerTitle: false,
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
+        actions: [
+          IconButton(onPressed: (){
+            showSnack(context, "This is Icon Button");
+          }, icon: Icon(Icons.access_time_filled_rounded)),
+        ],
+      ),
       body: Center(
         child: Column(
           children: [
@@ -136,6 +147,13 @@ class HomePage extends StatelessWidget{
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+          showSnack(context, "This is Floating Action Button");
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
     );
   }
 
